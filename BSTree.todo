@@ -1,0 +1,10 @@
+								v1.0
+
+- Tree node should contain a data field, a left and a right. 
+- Left and Right should be node pointer.
+- There should be a root node which will be start for the tree.
+- A tree DS should contain Node pointer root and count of the node
+
+								
+								v0.1
+	BSTree createBSTree(void);
