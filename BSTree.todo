@@ -7,4 +7,10 @@
 
 								
 								v0.1
-	BSTree createBSTree(void);
+BSTree createBSTree(void);
+	- It should create a tree object where root should be initialize bhy null and count should be zero;
+
+Node_ptr createTreeNode (int);
+	- A memory should create on the heap.
+	- The value should be insert to the data field
+	- The left value and the right value will set to be null

@@ -14,3 +14,4 @@ struct tree {
 };
 
 BSTree createBSTree(void);
+Node_ptr createTreeNode(void*);
