@@ -13,4 +13,6 @@ void test_createTreeNode_should_return_an_empty_treeNode () {
 	int data = 1;
 	node = createTreeNode(&data);
 	assertEqual(*(int*)node->data, 1);
+	assertEqual(node->left, 0x0);
+	assertEqual(node->right, 0x0);
 }
