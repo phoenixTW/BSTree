@@ -1,5 +1,5 @@
 typedef struct node Node;
-typedef struct tree Tree;
+typedef struct tree BSTree;
 typedef Node* Node_ptr;
 
 struct node {
@@ -12,3 +12,5 @@ struct tree {
 	Node_ptr root;
 	int count;	
 };
+
+BSTree createBSTree(void);
