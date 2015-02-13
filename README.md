@@ -37,13 +37,16 @@ int insert(BSTree*, int);
 ```sh
 	
 	1.	If root of the tree is null then the data will be the root of the tree.
-	2	If root is available then the method will check whether the data is greater than or less than the value of the root.
+	2	If root is available then the method will check whether the data is greater than
+		or less than the value of the root.
 	3.	If less than,
-			*	then the it will go to the left hand side and check that whether if it is another subtree or not.
+			*	then the it will go to the left hand side and check that whether
+				if it is another subtree or not.
 				>	If not then the node will inserted on the very place
 				>	If it is then no. 2 will be repeated.
 	4.	If greater than,
-			*	then the it will go to the right hand side and check that whether if it is another subtree or not.
+			*	then the it will go to the right hand side and check that whether
+			if it is another subtree or not.
 				>	If not then the node will inserted on the very place
 				>	If it is then no. 2 will be repeated.
 
@@ -53,5 +56,41 @@ int insert(BSTree*, int);
 
 	example: BSTree tree = createBSTree();
 			insert(&tree, 23);
+
+```
+
+##Version 0.3
+
+Insert a value into a tree.
+
+```sh
+
+Node_ptr find(BSTree, int);
+
+```
+
+```sh
+	
+	1.	If root of the tree is null then return null.
+	2	If root is available then the method will check whether the data is greater than
+		or less than the value of the root.
+	3.	If less than,
+			*	then the it will go to the left hand side and check that whether
+				if it is another subtree or not.
+				>	If the value is matched then return that node or return null.
+				>	If it is then no. 2 will be repeated.
+	4.	If greater than,
+			*	then the it will go to the right hand side and check that whether
+			if it is another subtree or not.
+				>	If the value is matched then return that node or return null.
+				>	If it is then no. 2 will be repeated.
+
+```
+
+```sh
+
+	example: BSTree tree = createBSTree();
+			insert(&tree, 23);
+			find(tree, 23); // return the node
 
 ```
