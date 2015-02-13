@@ -56,3 +56,18 @@ void test_find_should_return_the_node_whose_data_is_matched_with_the_passing_val
 	result = find(tree, 5);
 	assertEqual(result->data, 5);
 }
+
+void test_find_should_return_null_whose_data_isnt_matched_with_the_passing_value () {
+	int data = 1;
+	Node_ptr result;
+	insert(&tree, data);
+
+	data = 2;
+	insert(&tree, data);
+
+	data = 0;
+	insert(&tree, data);
+
+	result = find(tree, 3);
+	assertEqual(result, 0x0);
+}
