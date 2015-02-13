@@ -3,7 +3,7 @@ typedef struct tree BSTree;
 typedef Node* Node_ptr;
 
 struct node {
-	void *data;
+	int data;
 	Node_ptr left;
 	Node_ptr right;
 };
@@ -14,4 +14,5 @@ struct tree {
 };
 
 BSTree createBSTree(void);
-Node_ptr createTreeNode(void*);
+Node_ptr createTreeNode(int);
+int insert(BSTree*, int);

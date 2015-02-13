@@ -14,3 +14,14 @@ Node_ptr createTreeNode (int);
 	- A memory should create on the heap.
 	- The value should be insert to the data field
 	- The left value and the right value will set to be null
+
+
+							v0.2
+
+int insert(BSTree *, int);
+	- It should return the count of the number of node in the tree.
+	- insert method should take the address of the tree and the value where it will going to insert.
+	- before the data should be malloc and later on it will be insert as int value.
+	- The data will look after for the element's value in the tree, if its greater than the element's value then go to the right child else go to the left child, the process will continue until it will find a null value and insert on that position.
+
+	
