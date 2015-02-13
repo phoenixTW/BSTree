@@ -10,9 +10,10 @@ Create a Binary Search Tree alias BSTree.
 
 BSTree createBSTree(void);
 
-
+```
 
 ```sh
+
 	1. It creates a BSTree and returns the values of the tree
 	2. BSTree constains a root and count.
 	3. root holds the reference of root node.
@@ -20,3 +21,37 @@ BSTree createBSTree(void);
 		*	data of int type
 		*	reference of node on the left hand side
 		*	reference of right on the right hand side
+
+```
+
+##Version 0.2
+
+Insert a value into a tree.
+
+```sh
+
+int insert(BSTree*, int);
+
+```
+
+```sh
+	
+	1.	If root of the tree is null then the data will be the root of the tree.
+	2	If root is available then the method will check whether the data is greater than or less than the value of the root.
+	3.	If less than,
+			*	then the it will go to the left hand side and check that whether if it is another subtree or not.
+				>	If not then the node will inserted on the very place
+				>	If it is then no. 2 will be repeated.
+	4.	If greater than,
+			*	then the it will go to the right hand side and check that whether if it is another subtree or not.
+				>	If not then the node will inserted on the very place
+				>	If it is then no. 2 will be repeated.
+
+```
+
+```sh
+
+	example: BSTree tree = createBSTree();
+			insert(&tree, 23);
+
+```
