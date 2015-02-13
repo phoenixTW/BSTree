@@ -24,4 +24,11 @@ int insert(BSTree *, int);
 	- before the data should be malloc and later on it will be insert as int value.
 	- The data will look after for the element's value in the tree, if its greater than the element's value then go to the right child else go to the left child, the process will continue until it will find a null value and insert on that position.
 
-	
+
+							v0.3
+
+Node_ptr find(BSTree, int);
+	- It should return reference of matched node
+	- find function will call recursively.
+	- It will check the value is greater than or less than the value. If it is greater than then go to right tree and if not then go to the left tree.
+	- If the data is missing on the tree then return null.

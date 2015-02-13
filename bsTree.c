@@ -33,3 +33,16 @@ int insert (BSTree *tree, int data) {
 	tree->count++;
 	return 1;
 }
+
+Node_ptr find(BSTree tree, int data) {
+	BSTree branch = createBSTree();
+
+	if(tree.root == NULL) return NULL;
+
+	if(tree.root->data == data) return tree.root;
+
+	((tree.root->left) && (data < tree.root->data) && (branch.root = tree.root->left));
+	((tree.root->right) && (data > tree.root->data) && (branch.root = tree.root->right));
+
+	return find(branch, data);
+}
