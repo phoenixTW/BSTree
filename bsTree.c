@@ -68,6 +68,7 @@ Node_ptr delete(BSTree* tree,int data) {
 	if(root->data == data) {
 		!isLeafNode(root) && rightChild && interchange(rightChild,root) && (branch.root = rightChild)
 			&& (treeNode = delete(&branch,data));
+
 		isLeafNode(root) && (treeNode = root) && (tree->root = NULL);
 		return treeNode;
 	}
@@ -86,3 +87,4 @@ Node_ptr delete(BSTree* tree,int data) {
 	tree->count--;	
 	return treeNode;
 }
+

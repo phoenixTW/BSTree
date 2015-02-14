@@ -118,3 +118,23 @@ void test_delete_should_return_the_root_node_from_the_tree () {
 	assertEqual(delete(&tree,8)->data,8);
 	assertEqual(tree.root,0);
 }
+
+void test_should_return_the_root_node_of_the_tree_but_should_not_remove_the_tree () {
+	BSTree tree = createBSTree();
+	assertEqual(insert(&tree,8),1);
+	assertEqual(insert(&tree,7),2);
+	assertEqual(insert(&tree,10),3);
+	assertEqual(delete(&tree,8)->data,8);
+	assertEqual(tree.root->data,10);
+}
+
+// void test_should_return_the_root_node_of_the_tree_for_multilevel_tree () {
+// 	BSTree tree = createBSTree();
+// 	assertEqual(insert(&tree,8),1);
+// 	assertEqual(insert(&tree,7),2);
+// 	assertEqual(insert(&tree,10),3);
+// 	assertEqual(insert(&tree,11),4);
+// 	assertEqual(delete(&tree,10)->data,10);
+// 	assertEqual(tree.root->data,8);
+// 	assertEqual(tree.root->right->data,11);
+// }
