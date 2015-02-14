@@ -16,9 +16,7 @@ int insert (BSTree *tree, int data) {
 	BSTree branch = createBSTree();
 	Node_ptr node;
 
-	if (tree->root == NULL) {
-		tree->root = createTreeNode(data);
-	}
+	((tree->root == NULL) && (tree->root = createTreeNode(data)));
 
 	if(tree->root->data > data) {
 		(tree->root->left) && (branch.root = tree->root->left) && insert(&branch, data);
@@ -31,7 +29,8 @@ int insert (BSTree *tree, int data) {
 	}
 
 	tree->count++;
-	return 1;
+
+	return tree->count;
 }
 
 Node_ptr find(BSTree tree, int data) {
@@ -45,4 +44,45 @@ Node_ptr find(BSTree tree, int data) {
 	((tree.root->right) && (data > tree.root->data) && (branch.root = tree.root->right));
 
 	return find(branch, data);
+}
+
+int isLeafNode(Node_ptr node) {
+	return !node->left && !node->right ? 1 :0;
+}
+
+int interchange(Node_ptr node1,Node_ptr node2) {
+	int temp;
+	temp = node1->data;
+	node1->data = node2->data;
+	node2->data = temp;
+	return 1;
+}
+
+Node_ptr delete(BSTree* tree,int data) {
+	BSTree branch = createBSTree();
+	Node *treeNode = NULL,*root,*rightChild,*leftChild;
+	root = tree->root;
+	rightChild = root->right;
+	leftChild = root->left;
+	
+	if(root->data == data) {
+		!isLeafNode(root) && rightChild && interchange(rightChild,root) && (branch.root = rightChild)
+			&& (treeNode = delete(&branch,data));
+		isLeafNode(root) && (treeNode = root) && (tree->root = NULL);
+		return treeNode;
+	}
+
+	if(!treeNode){
+		leftChild && data < root->data && (branch.root = leftChild) && (treeNode = delete(&branch,data));
+		rightChild && data > root->data && (branch.root = rightChild) && (treeNode = delete(&branch,data));
+	}
+	
+	if(rightChild && data == rightChild->data)
+		isLeafNode(root->right) && (treeNode = root->right) && (root->right = NULL);
+	
+	if(leftChild && data == leftChild->data)
+		isLeafNode(root->left) && (treeNode = root->left) && (root->left = NULL);
+	
+	tree->count--;	
+	return treeNode;
 }

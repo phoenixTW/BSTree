@@ -93,4 +93,11 @@ Node_ptr find(BSTree, int);
 			insert(&tree, 23);
 			find(tree, 23); // return the node
 
+
+# Version 1.0
+
+	- Few bugs fixed
+	- Tested the functionality
+	- Refactored the code
+
 ```

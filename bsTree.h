@@ -17,3 +17,4 @@ BSTree createBSTree(void);
 Node_ptr createTreeNode(int);
 int insert(BSTree*, int);
 Node_ptr find(BSTree, int);
+Node* delete(BSTree*,int);
