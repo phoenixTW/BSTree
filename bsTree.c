@@ -88,3 +88,19 @@ Node_ptr delete(BSTree* tree,int data) {
 	return treeNode;
 }
 
+void traverse(BSTree tree,traverser function) {
+	BSTree branch = createBSTree();
+	if(tree.root) {
+		if(tree.root->left) {
+			branch.root = tree.root->left;
+			traverse(branch,function);
+		}
+	
+		function(tree.root->data);
+	
+		if(tree.root->right) {
+			branch.root = tree.root->right;
+			traverse(branch,function);
+		}
+	}
+}

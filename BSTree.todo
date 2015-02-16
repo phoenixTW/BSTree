@@ -32,3 +32,8 @@ Node_ptr find(BSTree, int);
 	- find function will call recursively.
 	- It will check the value is greater than or less than the value. If it is greater than then go to right tree and if not then go to the left tree.
 	- If the data is missing on the tree then return null.
+
+
+							v2.0
+
+Node_ptr delete(BSTree*,int);

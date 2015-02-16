@@ -138,3 +138,27 @@ void test_should_return_the_root_node_of_the_tree_but_should_not_remove_the_tree
 // 	assertEqual(tree.root->data,8);
 // 	assertEqual(tree.root->right->data,11);
 // }
+
+int a[] = {0,1,2,3,4,5,6},b[7];
+
+void put(int a) {
+	b[a] = a;
+}
+
+void test_traverse_should_give_the_values_in_assending_order() {
+	BSTree tree = createBSTree();
+	assertEqual(insert(&tree,3), 1);
+	assertEqual(insert(&tree,1), 2);
+	assertEqual(insert(&tree,5), 3);
+	assertEqual(insert(&tree,0), 4);
+	assertEqual(insert(&tree,2), 5);
+	assertEqual(insert(&tree,4), 6);
+	assertEqual(insert(&tree,6), 7);
+
+	traverse(tree,put);
+	
+	assertEqual(a[0],b[0]);
+	assertEqual(a[1],b[1]);
+	assertEqual(a[2],b[2]);
+	assertEqual(a[3],b[3]);
+}
